@@ -6,28 +6,28 @@ var modulesMassValues = text.split("\n");
 
 var fuelArr = [];
 
+//calculate the fuel amount
 const calcModuleFuel = (massOfModule, divider, substractionValue) => {
-  let divisionResult = Math.floor(massOfModule / divider);
-  let fuelForModule = divisionResult - substractionValue;
+  let result = Math.floor(massOfModule / divider);
+  let fuelForModule = result - substractionValue;
   return fuelForModule;
 };
 
-const createModulesFuelArr = moduleMass => {
-  moduleMass.map(mass => {
+//iterate through the all modules and calculate the fuel for each module
+const createModulesFuelArr = _moduleMassValues => {
+  _moduleMassValues.map(mass => {
     let moduleFuelNeed = calcModuleFuel(mass, 3, 2);
     fuelArr.push(moduleFuelNeed);
   });
 };
 createModulesFuelArr(modulesMassValues);
 
-console.log("Fuel amount for each modules list: " + fuelArr);
-
-//Calculate total amount of the fuel needed for all modules/inputs
+//Calculate total amount of the fuel needed for all modules
 //0 is the starting value of the total since we are starting with an empty array
-totalFuelNeed = fuelArr => {
+totalFuel = fuelArr => {
   return fuelArr.reduce((total, current) => {
     return total + current;
   }, 0);
 };
 
-console.log(`Total sum of the fuel requirement is: ${totalFuelNeed(fuelArr)}`);
+console.log(`Total sum of the fuel requirement is: ${totalFuel(fuelArr)}`);
