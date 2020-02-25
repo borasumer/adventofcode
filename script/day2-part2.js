@@ -33,9 +33,9 @@ const modifyIntcode = (input, position_1, position_2) => {
   return myFunc(copy);
 };
 
-//for loop iteration, to see what 1 and 2 values give 19690720
-for (let l = 0; l < 100; l++) {
-  for (let k = 0; k < 100; k++) {
+//for loop iteration, to see what 1 and 2 values give 19690720 //
+for (let l = 0; l < 99; l++) {
+  for (let k = 0; k < 99; k++) {
     if (modifyIntcode(intCodeValues, l, k) === 19690720) {
       let result = 100 * l + k;
       console.log(result);

@@ -27,7 +27,7 @@ createModulesFuelArr(modulesMassValues);
 totalFuel = fuelArr => {
   return fuelArr.reduce((total, current) => {
     return total + current;
-  }, 0);
+  });
 };
 
 console.log(`Total sum of the fuel requirement is: ${totalFuel(fuelArr)}`);

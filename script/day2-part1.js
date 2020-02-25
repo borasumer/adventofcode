@@ -5,7 +5,7 @@ var text = fs.readFileSync(indexPath).toString();
 var intCodeValues = text.split(",").map(Number);
 
 //make the calculations and get the first value
-const myFunc = (arr, index) => {
+const myFunc = (arr, index = 0) => {
   const opcode = arr[index];
   if (opcode === 99) {
     return arr[0];
@@ -25,4 +25,4 @@ const myFunc = (arr, index) => {
   }
 };
 
-console.log("First value: ", myFunc(intCodeValues, 0));
+console.log("First value: ", myFunc(intCodeValues));

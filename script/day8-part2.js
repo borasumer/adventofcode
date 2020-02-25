@@ -21,7 +21,10 @@ for (var i = 0; i < 100; i++) {
 //position each layer back to back
 const positionLayers = image => {
   const finalImage = [];
-  for (var i = 0; i < 6; i++) finalImage.push([..."#".repeat(25)]); //create the canvas that is made of '#'
+  for (var i = 0; i < 6; i++) {
+    console.log(finalImage);
+    finalImage.push([..."#".repeat(25)]); //create the canvas that is made of '#'
+  }
   Object.keys(image).map(function(key, _index) {
     image[key].map((line, x) => {
       line.map((pixel, y) => {

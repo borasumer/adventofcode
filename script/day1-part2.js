@@ -33,7 +33,6 @@ const calcTotalFuel = _modulesMassValues => {
 const newTotalFuel = calcTotalFuel(modulesMassValues).reduce(
   (total, current) => {
     return total + current;
-  },
-  0
+  }
 );
 console.log("total: ", newTotalFuel);

@@ -20,7 +20,7 @@ do {
   // }
   const count = {};
   passArr.map(x => {
-    count[x] = (count[x] || 0) + 1; //check if any digit repeasts itself
+    count[x] = count[x] + 1; //check if any digit repeasts itself
   });
 
   if (
@@ -29,7 +29,7 @@ do {
     _3 <= _4 &&
     _4 <= _5 &&
     _5 <= _6 &&
-    Object.entries(count).find(y => y[1] == 2) //check if any digit repeats 2 times
+    Object.entries(count).find(y => y[1] == 2) //turns the object into a nested array and check if any digit repeats 2 times
   ) {
     var number = passArr.join(""); //turn array of digits into a single number
     if (number > 359282) {
